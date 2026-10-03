@@ -718,8 +718,6 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px 
 .pill span:hover { border-color: var(--cream); }
 .pill input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 600; }
 .pill input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
-.btn.is-loading .btn__text::after { content: "…"; }
-.btn.is-loading { pointer-events: none; opacity: 0.8; }
 .form__success {
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; padding: 40px;
   opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.5s 0.2s, transform 0.6s 0.2s var(--ease), visibility 0.5s 0.2s;
@@ -731,7 +729,6 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px 
 .contact__form.is-sent .form__success circle { animation: dash 0.9s 0.3s var(--ease) forwards; }
 .contact__form.is-sent .form__success path { animation: dash 0.6s 0.9s var(--ease) forwards; }
 @keyframes dash { to { stroke-dashoffset: 0; } }
-.form__error { font-size: 0.85rem; color: #ffb38a; }
 .contact__form.is-demo .form__success svg { display: none; }
 .form__success h3 { font-family: var(--f-display); font-weight: 400; font-size: 2.2rem; }
 .form__success p { color: var(--muted); max-width: 34ch; }

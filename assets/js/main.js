@@ -1,8 +1,8 @@
 /* Orkestrasi utama: smooth scroll, preloader, animasi gulir, kursor, navigasi, formulir. */
 (function () {
-  /* Konfigurasi — isi formEndpoint (mis. Formspree / backend sendiri) agar formulir benar-benar terkirim. */
+  /* Konfigurasi — isi nomor WhatsApp tujuan formulir (format 62…, tanpa + atau spasi). */
   const CONFIG = {
-    formEndpoint: ''
+    whatsapp: ''
   };
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -307,36 +307,32 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!validate()) return;
-    const errorEl = $('#formError');
-    errorEl.hidden = true;
     const data = Object.fromEntries(new FormData(form).entries());
     const firstName = (data.nama || '').trim().split(' ')[0];
 
-    // Belum ada endpoint: jangan berpura-pura pesan terkirim.
-    if (!CONFIG.formEndpoint) {
+    // Belum ada nomor WhatsApp: jangan berpura-pura pesan terkirim.
+    if (!CONFIG.whatsapp) {
       $('#formSuccessTitle').textContent = 'Mode pratinjau';
       $('#formSuccessText').textContent = 'Formulir ini belum tersambung ke sistem, jadi pesan Anda belum terkirim. Silakan hubungi kami lewat email atau telepon yang tercantum.';
       form.classList.add('is-sent', 'is-demo');
       return;
     }
 
-    const btn = form.querySelector('button[type="submit"]');
-    const label = btn.querySelector('.btn__text');
-    btn.classList.add('is-loading');
-    label.textContent = 'Mengirim';
-    fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        $('#formSuccessTitle').textContent = 'Terima kasih!';
-        $('#formSuccessText').textContent = 'Terima kasih, ' + firstName + '. Tim ' + data.minat.toLowerCase() + ' kami akan menghubungi Anda dalam 1×24 jam kerja.';
-        form.classList.remove('is-demo');
-        form.classList.add('is-sent');
-      })
-      .catch(function () { errorEl.hidden = false; })
-      .finally(function () {
-        btn.classList.remove('is-loading');
-        label.textContent = 'Kirim Pesan';
-      });
+    // Susun pesan lalu buka WhatsApp; pengunjung tinggal menekan Kirim di sana.
+    const org = (data.instansi || '').trim();
+    const phone = (data.whatsapp || '').trim();
+    const lines = ['Halo PT Juragan Peternakan Group,', 'saya ' + data.nama.trim() + (org ? ' dari ' + org : '') + '.', '', 'Minat: ' + data.minat, 'Email: ' + data.email.trim()];
+    if (phone) lines.push('No. WhatsApp: ' + phone);
+    lines.push('', data.pesan.trim());
+    const url = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+    const win = window.open(url, '_blank');
+    if (win) win.opener = null;
+    else window.location.href = url;
+
+    $('#formSuccessTitle').textContent = 'Lanjutkan di WhatsApp';
+    $('#formSuccessText').textContent = 'Terima kasih, ' + firstName + '. Pesan Anda sudah tersusun di WhatsApp — tekan Kirim di sana agar tim ' + data.minat.toLowerCase() + ' kami menerimanya.';
+    form.classList.remove('is-demo');
+    form.classList.add('is-sent');
   });
   $('#formReset').addEventListener('click', function () {
     form.reset();
