@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT Juragan Peternakan Group — Ekosistem Peternakan Sapi Modern Indonesia</title>
+  <meta name="description" content="PT Juragan Peternakan Group adalah holding company yang membangun ekosistem peternakan sapi modern terintegrasi dari hulu ke hilir di Indonesia." />
+  <meta name="theme-color" content="#07130D" />
+  <meta property="og:title" content="PT Juragan Peternakan Group" />
+  <meta property="og:description" content="Menjadi market leader ekosistem peternakan sapi modern di Indonesia." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="is-loading">
+
+  <!-- Logo mark (dipakai ulang lewat <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="logo-mark" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 25C14 24.5 8.5 20 7.5 11" />
+        <path d="M42 25C50 24.5 55.5 20 56.5 11" />
+        <path d="M22 24H42L40 40L36 51H28L24 40Z" />
+        <path d="M22.5 29Q14 28 11.5 32.5Q17 35 23.2 33" />
+        <path d="M41.5 29Q50 28 52.5 32.5Q47 35 40.8 33" />
+        <path d="M32 29L35 32.5L32 36L29 32.5Z" />
+      </g>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__logo" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path pathLength="100" d="M22 25C14 24.5 8.5 20 7.5 11" />
+          <path pathLength="100" d="M42 25C50 24.5 55.5 20 56.5 11" />
+          <path pathLength="100" d="M22 24H42L40 40L36 51H28L24 40Z" />
+          <path pathLength="100" d="M22.5 29Q14 28 11.5 32.5Q17 35 23.2 33" />
+          <path pathLength="100" d="M41.5 29Q50 28 52.5 32.5Q47 35 40.8 33" />
+          <path pathLength="100" d="M32 29L35 32.5L32 36L29 32.5Z" />
+        </g>
+      </svg>
+      <div class="preloader__brand">JURAGAN <span>Peternakan Group</span></div>
+    </div>
+    <div class="preloader__foot">
+      <span class="preloader__label">Menyiapkan ekosistem</span>
+      <span class="preloader__count"><span id="loaderCount">0</span>%</span>
+    </div>
+    <div class="preloader__bar"><span id="loaderBar"></span></div>
+  </div>
+
+  <!-- Kursor kustom -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- Navigasi -->
+  <header class="nav" id="nav">
+    <a href="#beranda" class="brand" aria-label="Juragan Peternakan Group — kembali ke beranda">
+      <svg class="brand__mark"><use href="#logo-mark" /></svg>
+      <span class="brand__text"><strong>JURAGAN</strong><small>Peternakan Group</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Navigasi utama">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#tentang">Tentang</a>
+      <a href="#ekosistem">Ekosistem</a>
+      <a href="#rantai-nilai">Rantai Nilai</a>
+      <a href="#teknologi">Teknologi</a>
+      <a href="#jaringan">Jaringan</a>
+      <a href="#peta-jalan">Peta Jalan</a>
+    </nav>
+    <a href="#kontak" class="btn btn--gold btn--sm nav__cta magnetic"><span>Jadi Mitra</span></a>
+    <button class="nav__toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__links">
+      <a href="#tentang"><small>01</small>Tentang</a>
+      <a href="#ekosistem"><small>02</small>Ekosistem</a>
+      <a href="#rantai-nilai"><small>03</small>Rantai Nilai</a>
+      <a href="#teknologi"><small>04</small>Teknologi</a>
+      <a href="#jaringan"><small>05</small>Jaringan</a>
+      <a href="#peta-jalan"><small>06</small>Peta Jalan</a>
+      <a href="#kontak"><small>07</small>Kontak</a>
+    </nav>
+    <p class="mobile-menu__foot">Membangun ekosistem peternakan sapi modern Indonesia.</p>
+  </div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="beranda">
+      <canvas id="heroCanvas" class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__vignette" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="eyebrow hero__eyebrow"><span class="pulse-dot"></span> Holding Company · Peternakan Sapi Terintegrasi</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Memimpin</span></span>
+          <span class="line"><span>Ekosistem Sapi</span></span>
+          <span class="line"><span><em>Modern</em> Indonesia.</span></span>
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__lead">PT Juragan Peternakan Group membangun ekosistem peternakan sapi yang terintegrasi dari hulu ke hilir — dari genetika unggul dan pakan presisi, hingga daging halal berkualitas di meja makan keluarga Indonesia.</p>
+          <div class="hero__cta">
+            <a href="#ekosistem" class="btn btn--gold magnetic"><span>Jelajahi Ekosistem</span><svg><use href="#i-arrow" /></svg></a>
+            <a href="#kontak" class="btn btn--ghost magnetic"><span>Jadi Mitra Kami</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__meta container">
+        <span class="hero__meta-item">Hulu → Hilir · 8 Lini Bisnis</span>
+        <a href="#tentang" class="scroll-cue" aria-label="Gulir ke bagian berikutnya"><span>Gulir</span><i></i></a>
+        <span class="hero__meta-item">Jakarta · <span id="clock">--:--</span> WIB</span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Genetika Unggul</span><i>✦</i>
+          <span>Pakan Presisi</span><i>✦</i>
+          <span>Penggemukan Modern</span><i>✦</i>
+          <span>Kesehatan Hewan</span><i>✦</i>
+          <span>RPH Halal</span><i>✦</i>
+          <span>Distribusi Cold Chain</span><i>✦</i>
+          <span>AgriTech</span><i>✦</i>
+          <span>Kemitraan Peternak</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TENTANG ============ -->
+    <section class="about section" id="tentang">
+      <div class="container">
+        <span class="kicker" data-reveal>01 — Tentang Kami</span>
+        <p class="statement" data-scrub-words>Kebutuhan daging sapi nasional terus tumbuh, sementara pasokan dalam negeri belum mampu mengejarnya. Kami hadir untuk menutup kesenjangan itu — membangun ekosistem peternakan sapi yang <em>modern</em>, <em>terintegrasi</em>, dan <em>berkelanjutan</em> dari hulu ke hilir.</p>
+
+        <div class="vm">
+          <article class="vm__vision" data-reveal>
+            <svg class="vm__watermark" aria-hidden="true"><use href="#logo-mark" /></svg>
+            <span class="kicker kicker--light">Visi</span>
+            <h2 class="vm__vision-text">Menjadi <em>market leader</em> ekosistem peternakan sapi modern di Indonesia.</h2>
+          </article>
+          <article class="vm__mission">
+            <span class="kicker" data-reveal>Misi</span>
+            <ol class="mission-list">
+              <li data-reveal><span>01</span><p>Membangun rantai pasok sapi terintegrasi dari hulu ke hilir yang efisien, transparan, dan tertelusur.</p></li>
+              <li data-reveal><span>02</span><p>Memberdayakan peternak rakyat melalui kemitraan, akses pembiayaan, dan pendampingan teknis.</p></li>
+              <li data-reveal><span>03</span><p>Mengadopsi teknologi dan data untuk meningkatkan produktivitas serta kesejahteraan hewan.</p></li>
+              <li data-reveal><span>04</span><p>Menghadirkan daging sapi halal, higienis, dan berkualitas dengan harga yang terjangkau.</p></li>
+              <li data-reveal><span>05</span><p>Menjalankan praktik peternakan berkelanjutan yang ramah lingkungan dan berdampak sosial.</p></li>
+            </ol>
+          </article>
+        </div>
+
+        <!-- TODO: ganti angka berikut dengan data resmi perusahaan -->
+        <div class="stats">
+          <div class="stat" data-reveal><span class="stat__num"><span data-count="12500">0</span>+</span><span class="stat__label">Ekor sapi dalam pengelolaan</span></div>
+          <div class="stat" data-reveal><span class="stat__num"><span data-count="1200">0</span>+</span><span class="stat__label">Peternak mitra</span></div>
+          <div class="stat" data-reveal><span class="stat__num"><span data-count="8">0</span></span><span class="stat__label">Lini bisnis terintegrasi</span></div>
+          <div class="stat" data-reveal><span class="stat__num"><span data-count="10">0</span></span><span class="stat__label">Provinsi jangkauan operasional</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EKOSISTEM ============ -->
+    <section class="eco section" id="ekosistem">
+      <div class="eco__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>02 — Ekosistem Bisnis</span>
+          <h2 class="h2" data-split>Delapan lini bisnis. <em>Satu ekosistem.</em></h2>
+          <p class="section-lead" data-reveal>Setiap anak usaha dirancang untuk saling menguatkan — menciptakan efisiensi, kualitas, dan ketertelusuran di setiap tahap. Pilih salah satu simpul untuk melihat perannya.</p>
+        </div>
+
+        <div class="eco__stage">
+          <div class="eco__orbit" id="ecoOrbit">
+            <svg class="eco__svg" viewBox="0 0 600 600" aria-hidden="true">
+              <defs>
+                <radialGradient id="ecoCoreGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#D9A441" stop-opacity=".28" />
+                  <stop offset="100%" stop-color="#D9A441" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <circle cx="300" cy="300" r="170" fill="url(#ecoCoreGlow)" />
+              <circle class="eco__ring eco__ring--outer" cx="300" cy="300" r="288" />
+              <circle class="eco__ring eco__ring--orbit" cx="300" cy="300" r="225" />
+              <circle class="eco__ring eco__ring--inner" cx="300" cy="300" r="150" />
+              <g id="ecoSpokes"></g>
+              <g id="ecoLinks"></g>
+            </svg>
+            <div class="eco__core">
+              <svg><use href="#logo-mark" /></svg>
+              <strong>JPG</strong>
+              <span>Holding</span>
+            </div>
+            <!-- node diisi oleh ecosystem.js -->
+          </div>
+
+          <aside class="eco__panel" id="ecoPanel" aria-live="polite">
+            <div class="eco__panel-top">
+              <span class="eco__idx" id="ecoIdx">01 / 08</span>
+              <span class="eco__cat" id="ecoCat">Hulu</span>
+            </div>
+            <div class="eco__panel-body" id="ecoBody"></div>
+            <div class="eco__panel-foot">
+              <div class="eco__timer"><span id="ecoTimer"></span></div>
+              <div class="eco__arrows">
+                <button class="icon-btn" id="ecoPrev" aria-label="Lini bisnis sebelumnya"><svg style="transform:scaleX(-1)"><use href="#i-arrow" /></svg></button>
+                <button class="icon-btn" id="ecoNext" aria-label="Lini bisnis berikutnya"><svg><use href="#i-arrow" /></svg></button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RANTAI NILAI ============ -->
+    <section class="chain" id="rantai-nilai">
+      <div class="chain__pin">
+        <div class="chain__head container">
+          <div>
+            <span class="kicker" data-reveal>03 — Rantai Nilai</span>
+            <h2 class="h2" data-split>Dari kandang ke <em>meja makan.</em></h2>
+          </div>
+          <div class="chain__progress" aria-hidden="true">
+            <div class="chain__progress-line"><span class="chain__progress-fill"></span></div>
+            <svg class="chain__progress-icon"><use href="#logo-mark" /></svg>
+            <div class="chain__progress-labels"><span>Hulu</span><span>Hilir</span></div>
+          </div>
+        </div>
+
+        <div class="chain__track" id="chainTrack">
+          <article class="chain__card">
+            <div class="chain__card-top"><span class="chain__num">01</span><span class="chain__icon" data-icon="genetika"></span></div>
+            <h3>Genetika &amp; Pembibitan</h3>
+            <p>Semua berawal dari genetika. Kami memilih dan mengembangkan indukan unggul agar setiap generasi tumbuh lebih sehat dan produktif.</p>
+            <ul class="tags"><li>Inseminasi Buatan</li><li>Seleksi Genetik</li><li>Sapi Lokal &amp; Impor</li></ul>
+          </article>
+          <article class="chain__card">
+            <div class="chain__card-top"><span class="chain__num">02</span><span class="chain__icon" data-icon="pakan"></span></div>
+            <h3>Nutrisi &amp; Pakan</h3>
+            <p>Ransum diformulasikan presisi sesuai fase pertumbuhan, dengan memanfaatkan bahan baku lokal untuk efisiensi biaya.</p>
+            <ul class="tags"><li>Konsentrat</li><li>Silase Jagung</li><li>Formulasi Presisi</li></ul>
+          </article>
+          <article class="chain__card">
+            <div class="chain__card-top"><span class="chain__num">03</span><span class="chain__icon" data-icon="feedlot"></span></div>
+            <h3>Penggemukan Presisi</h3>
+            <p>Di kandang modern, pertambahan bobot setiap ekor dipantau untuk mencapai performa optimal dengan kesejahteraan hewan terjaga.</p>
+            <ul class="tags"><li>ADG Terukur</li><li>Kandang Koloni</li><li>Animal Welfare</li></ul>
+          </article>
+          <article class="chain__card">
+            <div class="chain__card-top"><span class="chain__num">04</span><span class="chain__icon" data-icon="vet"></span></div>
+            <h3>Kesehatan &amp; Biosekuriti</h3>
+            <p>Vaksinasi, pemeriksaan rutin, dan biosekuriti ketat menjaga ternak tetap sehat sepanjang siklus pemeliharaan.</p>
+            <ul class="tags"><li>Vaksinasi</li><li>Dokter Hewan</li><li>Biosekuriti</li></ul>
+          </article>
+          <article class="chain__card">
+            <div class="chain__card-top"><span class="chain__num">05</span><span class="chain__icon" data-icon="rph"></span></div>
+            <h3>Pemotongan Halal</h3>
+            <p>Diproses di RPH modern bersertifikat halal dengan standar higienitas tinggi dan rantai dingin yang terjaga.</p>
+            <ul class="tags"><li>Halal</li><li>NKV</li><li>Cold Chain</li></ul>
+          </article>
+          <article class="chain__card">
+            <div class="chain__card-top"><span class="chain__num">06</span><span class="chain__icon" data-icon="daging"></span></div>
+            <h3>Distribusi ke Konsumen</h3>
+            <p>Daging berkualitas tersalurkan ke hotel, restoran, ritel, dan rumah tangga — lengkap dengan jejak asal-usulnya.</p>
+            <ul class="tags"><li>HOREKA</li><li>Ritel Modern</li><li>Tertelusur</li></ul>
+          </article>
+          <article class="chain__card chain__card--final">
+            <span class="kicker">Tujuan akhir</span>
+            <h3>Meja makan <em>keluarga Indonesia.</em></h3>
+            <p>Protein berkualitas yang terjangkau, aman, dan dapat ditelusuri asal-usulnya.</p>
+            <a href="#teknologi" class="btn btn--gold magnetic"><span>Lihat Teknologi Kami</span><svg><use href="#i-arrow" /></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEKNOLOGI ============ -->
+    <section class="tech section" id="teknologi">
+      <div class="container tech__grid">
+        <div class="tech__copy">
+          <span class="kicker" data-reveal>04 — Teknologi</span>
+          <h2 class="h2" data-split>Setiap ekor sapi punya <em>identitas digital.</em></h2>
+          <p class="section-lead" data-reveal>Juragan Smart Farm menghubungkan kandang, pakan, kesehatan, dan distribusi dalam satu platform. Keputusan diambil berdasarkan data — bukan perkiraan.</p>
+          <ul class="features">
+            <li data-reveal><span class="features__icon" data-icon="tag"></span><div><strong>RFID Ear Tag</strong><p>Identitas unik setiap ekor, dari lahir hingga panen.</p></div></li>
+            <li data-reveal><span class="features__icon" data-icon="tech"></span><div><strong>Sensor IoT Kandang</strong><p>Suhu, kelembapan, dan konsumsi pakan terpantau 24/7.</p></div></li>
+            <li data-reveal><span class="features__icon" data-icon="chart"></span><div><strong>Analitik Pertumbuhan</strong><p>Prediksi bobot dan waktu panen yang lebih akurat.</p></div></li>
+            <li data-reveal><span class="features__icon" data-icon="trace"></span><div><strong>Ketertelusuran Penuh</strong><p>Asal-usul daging dapat ditelusuri hingga ke kandang.</p></div></li>
+          </ul>
+        </div>
+
+        <div class="dash" id="dash" data-reveal>
+          <div class="dash__top">
+            <div>
+              <span class="dash__title">Juragan Smart Farm</span>
+              <span class="dash__loc">Kandang A-03 · Lampung Tengah</span>
+            </div>
+            <span class="live-badge"><i></i>LIVE DEMO</span>
+          </div>
+
+          <div class="dash__kpis">
+            <div class="kpi"><span class="kpi__label">Suhu kandang</span><span class="kpi__value"><b data-kpi="temp">27,8</b><small>°C</small></span></div>
+            <div class="kpi"><span class="kpi__label">Kelembapan</span><span class="kpi__value"><b data-kpi="hum">71</b><small>%</small></span></div>
+            <div class="kpi"><span class="kpi__label">Populasi</span><span class="kpi__value"><b data-kpi="pop">248</b><small>ekor</small></span></div>
+            <div class="kpi"><span class="kpi__label">ADG rata-rata</span><span class="kpi__value"><b data-kpi="adg">1,31</b><small>kg/hr</small></span></div>
+          </div>
+
+          <div class="dash__chart">
+            <div class="dash__chart-head"><span>Konsumsi pakan · kg/jam</span><span class="dash__chart-now" id="dashNow">—</span></div>
+            <svg id="dashChart" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="dashArea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D9A441" stop-opacity=".35" />
+                  <stop offset="100%" stop-color="#D9A441" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <g class="dash__grid"><line x1="0" y1="30" x2="400" y2="30"/><line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="90" x2="400" y2="90"/></g>
+              <path id="dashAreaPath" fill="url(#dashArea)" />
+              <path id="dashLinePath" class="dash__line" />
+              <circle id="dashDot" r="4" class="dash__dot" />
+            </svg>
+          </div>
+
+          <div class="dash__bottom">
+            <div class="dash__list" id="dashList" role="listbox" aria-label="Daftar sapi"></div>
+            <div class="dash__detail" id="dashDetail"></div>
+          </div>
+
+          <button class="dash__scan" id="dashScan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Pindai RFID</button>
+          <div class="dash__scanner" aria-hidden="true"><span></span><p>Memindai ear tag…</p></div>
+          <p class="dash__note">Tampilan simulasi — data bersifat ilustratif.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SIMULASI ============ -->
+    <section class="sim section" id="simulasi">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <span class="kicker" data-reveal>05 — Simulasi Penggemukan</span>
+            <h2 class="h2" data-split>Simulasikan potensi <em>penggemukan</em> Anda.</h2>
+          </div>
+          <p class="section-lead" data-reveal>Geser parameter untuk melihat estimasi pertambahan bobot, kebutuhan pakan, dan nilai jual. Cocok sebagai gambaran awal sebelum berdiskusi dengan tim kemitraan kami.</p>
+        </div>
+
+        <div class="sim__grid">
+          <form class="sim__controls" id="simForm" onsubmit="return false">
+            <div class="range">
+              <div class="range__head"><label for="simCount">Jumlah sapi</label><output id="simCountOut">50 ekor</output></div>
+              <input type="range" id="simCount" min="1" max="500" step="1" value="50" />
+            </div>
+            <div class="range">
+              <div class="range__head"><label for="simStart">Bobot awal</label><output id="simStartOut">300 kg</output></div>
+              <input type="range" id="simStart" min="200" max="450" step="5" value="300" />
+            </div>
+            <div class="range">
+              <div class="range__head"><label for="simAdg">Pertambahan bobot harian (ADG)</label><output id="simAdgOut">1,20 kg/hari</output></div>
+              <input type="range" id="simAdg" min="0.6" max="1.8" step="0.05" value="1.2" />
+            </div>
+            <div class="range">
+              <div class="range__head"><label for="simDays">Lama penggemukan</label><output id="simDaysOut">100 hari</output></div>
+              <input type="range" id="simDays" min="60" max="180" step="5" value="100" />
+            </div>
+            <div class="range">
+              <div class="range__head"><label for="simPrice">Harga bobot hidup</label><output id="simPriceOut">Rp55.000/kg</output></div>
+              <input type="range" id="simPrice" min="45000" max="70000" step="500" value="55000" />
+            </div>
+            <div class="sim__presets">
+              <span>Preset:</span>
+              <button type="button" data-preset="rakyat">Peternak Rakyat</button>
+              <button type="button" data-preset="menengah">Skala Menengah</button>
+              <button type="button" data-preset="industri">Skala Industri</button>
+            </div>
+          </form>
+
+          <div class="sim__result">
+            <div class="sim__visual">
+              <svg class="sim__cow" id="simCowSvg" viewBox="0 0 220 130" aria-hidden="true">
+                <g id="simCowStart" class="sim__cow-ghost"></g>
+                <g id="simCowEnd" class="sim__cow-main"></g>
+              </svg>
+              <div class="sim__weights">
+                <div><small>Bobot awal</small><strong id="simW0">300 kg</strong></div>
+                <svg class="sim__weights-arrow"><use href="#i-arrow" /></svg>
+                <div><small>Bobot akhir / ekor</small><strong id="simW1" class="gold">420 kg</strong></div>
+              </div>
+            </div>
+
+            <div class="sim__outputs">
+              <div class="sim__out"><small>Total pertambahan bobot</small><strong id="simGain">6,0 ton</strong></div>
+              <div class="sim__out"><small>Kebutuhan pakan (bahan kering)</small><strong id="simFeed">48,6 ton</strong></div>
+              <div class="sim__out sim__out--wide"><small>Estimasi nilai jual bobot hidup</small><strong id="simValue">Rp1,16 miliar</strong><span id="simValueGain">Nilai pertambahan bobot: Rp330 juta</span></div>
+            </div>
+
+            <div class="sim__chart">
+              <svg id="simChart" viewBox="0 0 520 160" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <div class="sim__chart-axis"><span>Hari 0</span><span id="simAxisEnd">Hari 100</span></div>
+            </div>
+            <p class="sim__note">*Simulasi bersifat ilustratif dan bukan proyeksi keuntungan. Hasil aktual dipengaruhi genetika, manajemen, kesehatan ternak, biaya operasional, dan harga pasar. Estimasi pakan memakai asumsi konsumsi bahan kering 2,7% dari bobot badan per hari.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JARINGAN ============ -->
+    <section class="network section" id="jaringan">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <span class="kicker" data-reveal>06 — Jaringan Operasional</span>
+            <h2 class="h2" data-split>Jejak kami di <em>Nusantara.</em></h2>
+          </div>
+          <p class="section-lead" data-reveal>Dari Sumatra hingga Nusa Tenggara, jaringan operasional kami terus tumbuh untuk mendekatkan pasokan sapi berkualitas ke seluruh Indonesia.</p>
+        </div>
+
+        <div class="map__filters" id="mapFilters" role="tablist" aria-label="Filter jenis lokasi">
+          <button class="chip is-active" data-type="all" role="tab" aria-selected="true">Semua</button>
+          <button class="chip" data-type="feedlot" role="tab" aria-selected="false"><i style="--c:var(--gold)"></i>Feedlot &amp; Pakan</button>
+          <button class="chip" data-type="breeding" role="tab" aria-selected="false"><i style="--c:var(--sage)"></i>Pembibitan</button>
+          <button class="chip" data-type="olah" role="tab" aria-selected="false"><i style="--c:var(--terra)"></i>Pengolahan</button>
+          <button class="chip" data-type="mitra" role="tab" aria-selected="false"><i style="--c:var(--cream)"></i>Kemitraan</button>
+        </div>
+
+        <div class="map" id="map">
+          <canvas id="mapCanvas" aria-label="Peta jaringan operasional di Indonesia" role="img"></canvas>
+          <div class="map__tooltip" id="mapTooltip" role="status"></div>
+        </div>
+        <div class="map__list" id="mapList"></div>
+      </div>
+    </section>
+
+    <!-- ============ KEUNGGULAN ============ -->
+    <section class="why section" id="keunggulan">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>07 — Keunggulan</span>
+          <h2 class="h2" data-split>Mengapa <em>Juragan?</em></h2>
+        </div>
+        <div class="why__grid">
+          <article class="why__card tilt">
+            <span class="why__num">01</span>
+            <span class="why__icon" data-icon="chain"></span>
+            <h3>Terintegrasi Hulu–Hilir</h3>
+            <p>Kendali penuh dari genetika hingga distribusi menghasilkan efisiensi biaya dan kualitas yang konsisten.</p>
+          </article>
+          <article class="why__card tilt">
+            <span class="why__num">02</span>
+            <span class="why__icon" data-icon="chart"></span>
+            <h3>Berbasis Data &amp; Teknologi</h3>
+            <p>Keputusan operasional didukung data real-time dari setiap kandang dan setiap ekor sapi.</p>
+          </article>
+          <article class="why__card tilt">
+            <span class="why__num">03</span>
+            <span class="why__icon" data-icon="rph"></span>
+            <h3>Halal, Aman &amp; Tertelusur</h3>
+            <p>Standar halal, higienitas, dan ketertelusuran penuh dari kandang sampai meja makan.</p>
+          </article>
+          <article class="why__card tilt">
+            <span class="why__num">04</span>
+            <span class="why__icon" data-icon="mitra"></span>
+            <h3>Memberdayakan Peternak</h3>
+            <p>Kemitraan yang adil membuka akses pasar, pembiayaan, dan ilmu bagi peternak rakyat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PETA JALAN ============ -->
+    <!-- TODO: sesuaikan tahun & target dengan rencana strategis perusahaan -->
+    <section class="roadmap section" id="peta-jalan">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>08 — Peta Jalan 2025–2030</span>
+          <h2 class="h2" data-split>Menuju <em>market leader.</em></h2>
+        </div>
+        <div class="timeline" id="timeline">
+          <div class="timeline__line"><span class="timeline__fill"></span></div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card"><span class="timeline__year">2025</span><h3>Fondasi</h3><p>Konsolidasi lini bisnis inti — penggemukan, pakan, dan perdagangan sapi — di bawah satu holding.</p></div>
+          </div>
+          <div class="timeline__item is-now">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card"><span class="timeline__year">2026 <b>Kita di sini</b></span><h3>Integrasi</h3><p>Pabrik pakan dan RPH modern terhubung; peluncuran platform Juragan Smart Farm.</p></div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card"><span class="timeline__year">2027</span><h3>Kemitraan Massal</h3><p>Program inti-plasma menjangkau ribuan peternak rakyat dengan akses pembiayaan dan pendampingan.</p></div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card"><span class="timeline__year">2028</span><h3>Ekspansi Nasional</h3><p>Pusat pembibitan di Indonesia Timur dan jaringan distribusi rantai dingin di kota-kota besar.</p></div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card"><span class="timeline__year">2030</span><h3>Market Leader</h3><p>Ekosistem peternakan sapi modern yang paling terintegrasi di Indonesia.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAK ============ -->
+    <section class="contact section" id="kontak">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <span class="kicker" data-reveal>09 — Mari Tumbuh Bersama</span>
+          <h2 class="h2" data-split>Bangun masa depan pangan <em>bersama kami.</em></h2>
+
+          <div class="audience" data-reveal>
+            <div class="audience__tabs" role="tablist" aria-label="Pilih peran Anda">
+              <button role="tab" aria-selected="true" class="is-active" data-aud="peternak">Peternak</button>
+              <button role="tab" aria-selected="false" data-aud="investor">Investor</button>
+              <button role="tab" aria-selected="false" data-aud="bisnis">Mitra Bisnis</button>
+              <button role="tab" aria-selected="false" data-aud="karier">Karier</button>
+            </div>
+            <p class="audience__text" id="audText">Bergabung dalam program kemitraan inti-plasma: bibit unggul, pakan, pendampingan teknis, dan jaminan pasar untuk hasil ternak Anda.</p>
+          </div>
+
+          <!-- TODO: ganti dengan alamat, email, dan telepon resmi -->
+          <ul class="contact__info" data-reveal>
+            <li><small>Kantor Pusat</small><span>Jakarta, Indonesia</span></li>
+            <li><small>Email</small><a href="mailto:info@juraganpeternakan.co.id">info@juraganpeternakan.co.id</a></li>
+            <li><small>Telepon</small><a href="tel:+622100000000">+62 21 0000 0000</a></li>
+          </ul>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate data-reveal>
+          <div class="form__fields">
+            <div class="field"><input id="fName" name="nama" type="text" placeholder=" " autocomplete="name" required /><label for="fName">Nama lengkap</label><span class="field__err">Mohon isi nama Anda</span></div>
+            <div class="field"><input id="fOrg" name="instansi" type="text" placeholder=" " autocomplete="organization" /><label for="fOrg">Perusahaan / instansi (opsional)</label></div>
+            <div class="field-row">
+              <div class="field"><input id="fEmail" name="email" type="email" placeholder=" " autocomplete="email" required /><label for="fEmail">Email</label><span class="field__err">Format email belum benar</span></div>
+              <div class="field"><input id="fPhone" name="whatsapp" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" /><label for="fPhone">No. WhatsApp (opsional)</label></div>
+            </div>
+            <fieldset class="interest">
+              <legend>Saya tertarik dengan</legend>
+              <label class="pill"><input type="radio" name="minat" value="Kemitraan Peternak" checked /><span>Kemitraan Peternak</span></label>
+              <label class="pill"><input type="radio" name="minat" value="Investasi" /><span>Investasi</span></label>
+              <label class="pill"><input type="radio" name="minat" value="Pembelian Sapi & Daging" /><span>Pembelian Sapi &amp; Daging</span></label>
+              <label class="pill"><input type="radio" name="minat" value="Karier" /><span>Karier</span></label>
+              <label class="pill"><input type="radio" name="minat" value="Lainnya" /><span>Lainnya</span></label>
+            </fieldset>
+            <div class="field"><textarea id="fMsg" name="pesan" rows="4" placeholder=" " required></textarea><label for="fMsg">Pesan Anda</label><span class="field__err">Ceritakan sedikit kebutuhan Anda</span></div>
+            <button type="submit" class="btn btn--gold btn--block magnetic"><span class="btn__text">Kirim Pesan</span><svg><use href="#i-arrow" /></svg></button>
+            <p class="form__error" id="formError" role="alert" hidden>Pesan belum terkirim karena ada gangguan koneksi. Coba kirim lagi, atau hubungi kami lewat email.</p>
+          </div>
+          <div class="form__success" aria-live="polite">
+            <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" /><path d="M15 27l7 7 15-15" /></svg>
+            <h3 id="formSuccessTitle">Terima kasih!</h3>
+            <p id="formSuccessText">Pesan Anda sudah kami terima. Tim kami akan menghubungi Anda dalam 1×24 jam kerja.</p>
+            <button type="button" class="btn btn--ghost btn--sm" id="formReset"><span>Kirim pesan lain</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#beranda" class="brand" aria-label="Juragan Peternakan Group">
+            <svg class="brand__mark"><use href="#logo-mark" /></svg>
+            <span class="brand__text"><strong>JURAGAN</strong><small>Peternakan Group</small></span>
+          </a>
+          <p>Membangun ekosistem peternakan sapi modern yang terintegrasi, berkelanjutan, dan memberdayakan peternak Indonesia.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Perusahaan</h4>
+          <a href="#tentang">Tentang Kami</a><a href="#tentang">Visi &amp; Misi</a><a href="#peta-jalan">Peta Jalan</a><a href="#kontak">Karier</a>
+        </div>
+        <div class="footer__col">
+          <h4>Ekosistem</h4>
+          <a href="#ekosistem">Genetika &amp; Pakan</a><a href="#ekosistem">Feedlot &amp; Kesehatan</a><a href="#ekosistem">RPH &amp; Distribusi</a><a href="#ekosistem">Tech &amp; Kemitraan</a>
+        </div>
+        <div class="footer__col">
+          <h4>Hubungi</h4>
+          <a href="mailto:info@juraganpeternakan.co.id">info@juraganpeternakan.co.id</a><a href="tel:+622100000000">+62 21 0000 0000</a><span>Jakarta, Indonesia</span>
+        </div>
+      </div>
+
+      <div class="footer__giant" aria-hidden="true">
+        <span><span>J</span></span><span><span>U</span></span><span><span>R</span></span><span><span>A</span></span><span><span>G</span></span><span><span>A</span></span><span><span>N</span></span>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> PT Juragan Peternakan Group. Hak cipta dilindungi.</span>
+        <a href="#beranda" class="to-top">Kembali ke atas <svg style="transform:rotate(-90deg)"><use href="#i-arrow" /></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Aplikasi -->
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/hero.js"></script>
+  <script src="assets/js/ecosystem.js"></script>
+  <script src="assets/js/smartfarm.js"></script>
+  <script src="assets/js/simulator.js"></script>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
